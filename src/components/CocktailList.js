@@ -3,6 +3,9 @@ import Cocktail from './Cocktail'
 import Loading from './Loading'
 import { useGlobalContext } from '../context'
 
+
+
+//Get All  the Cocktail  List data,pass it  to the cocktail component
 const CocktailList = () => {
   const { cocktails, loading } = useGlobalContext()
 
@@ -21,8 +24,7 @@ const CocktailList = () => {
     <section className='section'>
       <h2 className='section-title'>cocktails</h2>
 
-      <div className='cocktail-center'>
-        {console.log(cocktails, '++++')}
+      <div className='cocktails-center'>
         {cocktails.map(item => {
           return <Cocktail key={item.id} {...item} />
         })}

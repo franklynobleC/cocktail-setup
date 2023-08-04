@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//values passed  from cocktail List
+//Destructured and  passed here to  list all  the component
+
 const Cocktail = ({ image, name, id, info, glass }) => {
   return (
     <article className='cocktail'>

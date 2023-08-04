@@ -6,6 +6,8 @@ const SearchForm = () => {
 
   const searchValue = useRef('')
 
+
+  //use  focus to get mouse to focus
   useEffect(() => {
     searchValue.current.focus()
   }, [])

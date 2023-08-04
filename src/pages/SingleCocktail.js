@@ -10,7 +10,7 @@ const SingleCocktail = () => {
   const [loading, setLoading] = useState(false)
   const [cocktail, setCocktail] = useState(null)
 
-  // console.log(id)
+  //  get a single cocktail   and  there details
 
   useEffect(() => {
     setLoading(true)
@@ -77,8 +77,35 @@ const SingleCocktail = () => {
     cocktail
 
   return (
-    <section>
-      <div>{name}</div>
+    <section className='section cocktail-section'>
+      <Link to='/' className='btn btn-primary'>
+        back home
+      </Link>
+
+      <h2 className='section-title'> {name}</h2>
+      <div className='drink'>
+        <img src={image} alt={name} />
+        <div>
+          <p>
+            <span className='drink-data'>category:</span>
+            {category}
+          </p>
+          <p>
+            <span className='drink-data'> info:</span>
+            {info}
+          </p>
+          <p>
+            <span className='drink-data'> instructions:</span>
+            {instructions}
+          </p>
+          <p>
+            <span className='drink-data'> ingredients:</span>
+            {ingredients.map((item, index) => {
+              return item ? <span key={index}>{item}</span> : null
+            })}
+          </p>
+        </div>
+      </div>
     </section>
   )
 }
